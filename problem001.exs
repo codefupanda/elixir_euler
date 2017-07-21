@@ -6,11 +6,11 @@
 # 233168
 
 defmodule ProjectEuler.Problem001 do
-    def computeSum(limit) do
+    def compute_sum(limit) do
         1..(limit-1)
         |> Enum.filter(&(rem(&1, 3) == 0 || rem(&1, 5) == 0))
         |> Enum.reduce(0, &(&1 + &2))
     end
 end
 
-IO.inspect ProjectEuler.Problem001.computeSum(1000)
+IO.inspect ProjectEuler.Problem001.compute_sum(1000)

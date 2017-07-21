@@ -7,17 +7,17 @@
 # 4613732
 
 defmodule ProjectEuler.Problem002 do
-    def fibSum(fib1, _fib2, sum) when fib1 > 4_000_000 do
+    def fib_sum(fib1, _fib2, sum) when fib1 > 4_000_000 do
         sum
     end
 
-    def fibSum(fib1, fib2, sum) when rem(fib1, 2)  == 0 do
-        fibSum(fib2, (fib1 + fib2), (sum+fib1))
+    def fib_sum(fib1, fib2, sum) when rem(fib1, 2)  == 0 do
+        fib_sum(fib2, (fib1 + fib2), (sum+fib1))
     end
 
-    def fibSum(fib1, fib2, sum) do
-        fibSum(fib2, (fib1 + fib2), sum)
+    def fib_sum(fib1, fib2, sum) do
+        fib_sum(fib2, (fib1 + fib2), sum)
     end
 end
 
-IO.inspect ProjectEuler.Problem002.fibSum(0, 1, 0)
+IO.inspect ProjectEuler.Problem002.fib_sum(0, 1, 0)
