@@ -7,16 +7,16 @@
 
 defmodule ProjectEuler.Problem003 do
 
-    def primeFactor(n), do: primeFactorHelper(n, prime(n))
+    def primeFactor(n), do: primeFactorHelper(n, next_prime(n))
 
     def primeFactorHelper(n, min_prime) when min_prime < n do
         n = div(n, min_prime)
-        primeFactorHelper(n, prime(n))
+        primeFactorHelper(n, next_prime(n))
     end
 
     def primeFactorHelper(n, _min_prime), do: n
 
-    def prime(n) do
+    def next_prime(n) do
         Enum.find(2..round(:math.sqrt(n)), n, &(rem(n, &1) == 0))
     end
 end
