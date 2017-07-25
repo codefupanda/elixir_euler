@@ -7,17 +7,27 @@
 # 4613732
 
 defmodule ProjectEuler.Problem002 do
+
+    # We are using Elixir's pattern matching feature along with tail recursion
+    @first_fib 0
+    @second_fib 1
+    def fib_sum() do
+        init_sum = 0
+        fib_sum(@first_fib, @second_fib, init_sum)
+    end
+
+    # Terminating case, do not exceed four million
     def fib_sum(fib1, _fib2, sum) when fib1 > 4_000_000 do
         sum
     end
-
+    # if the fib is even, sum it
     def fib_sum(fib1, fib2, sum) when rem(fib1, 2)  == 0 do
         fib_sum(fib2, (fib1 + fib2), (sum+fib1))
     end
-
+    # else, no-op
     def fib_sum(fib1, fib2, sum) do
         fib_sum(fib2, (fib1 + fib2), sum)
     end
 end
 
-IO.inspect ProjectEuler.Problem002.fib_sum(0, 1, 0)
+IO.inspect ProjectEuler.Problem002.fib_sum()

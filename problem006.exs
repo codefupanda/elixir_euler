@@ -17,18 +17,16 @@ defmodule ProjectEuler.Problem006 do
     def sum_of_squares(n) do
         sum_of_squares_helper(n, 0)
     end
-
+    # sum the squares till number is greater than 0
     def sum_of_squares_helper(n, sum) when n <= 0, do: sum
     def sum_of_squares_helper(n, sum) do
         sum_of_squares_helper(n - 1, sum + (n * n))
     end
 
     def square_of_sum(n) do
-        sum = square_of_sum(n, 0)
+        sum = Enum.sum(1..n)
         sum * sum
     end
-    def square_of_sum(n, sum) when n <= 0, do: sum
-    def square_of_sum(n, sum), do: square_of_sum(n - 1, sum + n)
 end
 
 IO.inspect ProjectEuler.Problem006.solve(100)
