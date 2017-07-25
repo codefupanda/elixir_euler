@@ -1,2 +1,2 @@
 # elixireuler
-Project Euler solved with Elixir
+Project Euler problems solved in Elixir programming Language. 
