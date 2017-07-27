@@ -3,6 +3,8 @@
 # 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
 # What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
 
+# 232792560
+
 defmodule ProjectEuler.Problem005 do
 
     # Mathematically, smallest positive integer that is divisible by two numbers a and b 
@@ -20,8 +22,9 @@ defmodule ProjectEuler.Problem005 do
         round((a * b) / gcd(a, b))
     end
 
+    # NOTE: Integer.gcd(a, b) can be used instead.
     defp gcd(a, 0), do: a
-
+    defp gcd(0, b), do: b
     defp gcd(a, b) do
         gcd(b, round(rem(a, b)))
     end
