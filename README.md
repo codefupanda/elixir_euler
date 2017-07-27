@@ -1,4 +1,4 @@
-# elixireuler
+# elixir_euler
 Project Euler problems solved in Elixir programming Language. 
 
 Solving Project Euler problems is a fun way to learn the new programming languages.
