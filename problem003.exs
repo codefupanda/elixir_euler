@@ -7,20 +7,20 @@
 
 defmodule ProjectEuler.Problem003 do
 
-    def primeFactor(n), do: primeFactorHelper(n, next_prime(n))
+    def primeFactor(n), do: primeFactorHelper(n, smallest_prime(n))
 
     # Recursion to our rescue, 
     # Divide the number with min prime
     def primeFactorHelper(n, min_prime) when min_prime < n do
         n = div(n, min_prime)
-        primeFactorHelper(n, next_prime(n))
+        primeFactorHelper(n, smallest_prime(n))
     end
 
     # Terminating case
     # Largest prime factory of a prime is itself
     def primeFactorHelper(n, _min_prime), do: n
 
-    def next_prime(n) do
+    def smallest_prime(n) do
         Enum.find(2..round(:math.sqrt(n)), n, &(rem(n, &1) == 0))
     end
 end
