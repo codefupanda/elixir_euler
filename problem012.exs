@@ -19,7 +19,7 @@
 
 # 76576500
 
-defmodule ProjectEuler.Problem001 do
+defmodule ProjectEuler.Problem012 do
     def triangle_with_divisors(n) do
         triangle_with_divisors(n, 1, 1, 1)
     end
@@ -36,4 +36,4 @@ defmodule ProjectEuler.Problem001 do
     end
 end
 
-IO.inspect ProjectEuler.Problem001.triangle_with_divisors(500)
+IO.inspect ProjectEuler.Problem012.triangle_with_divisors(500)
