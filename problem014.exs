@@ -21,6 +21,7 @@ defmodule ProjectEuler.Problem013 do
         |> Enum.map(&ProjectEuler.Problem013.count_collatz_terms/1)
         |> Enum.sort(fn {_, count1}, {_, count2} -> count1 > count2 end)
         |> Enum.at(0)
+        |> elem(0)
     end
 
     def count_collatz_terms(n) do
